@@ -10,6 +10,10 @@
 	VALUES (#{item.id}, #{item.nombre}, #{item.descripcion}, #{item.fechaLanzamiento}, #{item.tarifaxDia}, #{item.formatoRenta}, #{item.genero}, #{item.tipo.id})	
 </insert>
 
+<update parameterType="map" id="setItem">
+	UPDATE VI_ITEMS SET tarifaxdia = #{tar} WHERE id = #{id_it}
+</update>
+
 <select parameterType="map" id="consultarItems" resultMap="ItemsResult">
 	select
 		i.id as ite_id,

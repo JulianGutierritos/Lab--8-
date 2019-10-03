@@ -19,6 +19,7 @@ public interface ItemMapper {
     public Item consultarItem(@Param("id_it") int id);
     
     public void insertarItem(@Param("item") Item it);
+	
+	public void setItem(@Param("id_it") int id, @Param("tar") long tarifa);
 
-        
 }

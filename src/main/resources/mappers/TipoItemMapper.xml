@@ -3,8 +3,25 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="edu.eci.cvds.sampleprj.dao.mybatis.mappers.TipoItemMapper">
+<select parameterType="map" id="getTiposItems" resultMap="TipoItemsResult">
+	select      
+		id 
+		descripcion 
+	FROM 
+		VI_TIPOITEM  
+</select>  
 
+<select parameterType="map" id="getTipoItems" resultMap="TipoItemsResult">
+	select      
+		id 
+		descripcion 
+	FROM 
+		VI_TIPOITEM  
+	WHERE 
+		id = #{id_ti}
+</select>  
+  
+<mapper namespace="edu.eci.cvds.sampleprj.dao.mybatis.mappers.TipoItemMapper">
     <resultMap type='TipoItem' id='TipoItemsResult'>
     <id property='id' column='ti_id'/>
     <result property='descripcion' column='ti_descripcion'/>

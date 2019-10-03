@@ -74,6 +74,15 @@
 	VALUES (#{id}, #{idit}, #{fechainicio}, #{fechafin})
 </insert>
 
+<insert parameterType="map" id="agregarCliente">
+	INSERT INTO VI_CLIENTES (nombre, documento, telefono, direccion, email, vetado)
+	VALUES (#{cl.nombre}, #{cl.documento}, #{cl.telefono}, #{cl.direccion}, #{cl.email}, #{cl.vetado})
+</insert>
+
+<update parameterType="map" id="setCliente">
+	UPDATE VI_CLIENTES SET vetado = #{val} WHERE documento = #{idcli}
+</update>
+
 <resultMap type="Cliente" id="ClienteResult" >
     <id property='documento' column='documento'/>
     <result property='nombre' column='cli_nombre'/>

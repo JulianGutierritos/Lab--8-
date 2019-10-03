@@ -32,5 +32,15 @@ public interface ClienteMapper {
      * @return 
      */
     public List<Cliente> consultarClientes();
+	
+	/**
+	* Agregar cliente
+	*/
+	public void agregarCliente(@Param("cli") Cliente cli);
+	
+	/**
+	* Cambia el estado de vetado de un cliente
+	*/
+	public void setCliente(@Param("idcli") int id, @Param("val") int val);
     
 }
