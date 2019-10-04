@@ -37,7 +37,7 @@ public class MyBATISItemDAO implements ItemDAO{
   }
   
   @Override
-  public void actualizarTarifa(int id, long tarifa){
+  public void actualizarTarifa(int id, long tarifa) throws PersistenceException {
   try{
       itemMapper.setItem(id, tarifa);
   }

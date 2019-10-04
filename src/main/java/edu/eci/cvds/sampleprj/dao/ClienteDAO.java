@@ -13,5 +13,5 @@ public interface ClienteDAO {
 
    public List<Cliente> consultarClientes() throws PersistenceException;
    
-   public void cambiarVetado(int id, int val);
+   public void cambiarVetado(int id, int val) throws PersistenceException;
 }

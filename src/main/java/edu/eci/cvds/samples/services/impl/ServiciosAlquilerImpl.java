@@ -19,7 +19,7 @@ import java.util.List;
 public class ServiciosAlquilerImpl implements ServiciosAlquiler {
 
    @Inject
-   private ItemDAO ItemDAO;
+   private ItemDAO itemDAO;
 
    @Override
    public int valorMultaRetrasoxDia(int itemId) {
