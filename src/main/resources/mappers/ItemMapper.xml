@@ -51,7 +51,7 @@
 </select>   
 
 <select parameterType="map" id="consultarItemsLibres" resultMap="ItemsResult">
-select
+	select
 		i.id as ite_id,
 		i.nombre as ite_nombre,
 		i.descripcion ,
@@ -60,7 +60,7 @@ select
 		ti.descripcion ti_descripcion 
 		FROM 
 		VI_ITEMS as i left join VI_TIPOITEM as ti on i.TIPOITEM_id=ti.id 
-		WHERE  i.id NOT IN (SELECT ir.ITEMS_id FROM VI_ITEMRENTADO as ir WHERE ir.fechainiciorenta <= CURDATE() and ir.fechafinrenta >= CURDATE())		
+		WHERE  i.id NOT IN (SELECT ir.ITEMS_id FROM VI_ITEMRENTADO as ir WHERE ir.fechainiciorenta &lt; = CURDATE() and ir.fechafinrenta &gt;= CURDATE())		
 </select> 	
 
     <resultMap type='Item' id='ItemsResult'>

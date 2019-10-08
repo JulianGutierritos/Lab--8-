@@ -1,4 +1,4 @@
-package edu.eci.cvds.test;
+package edu.eci.cvds;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,6 @@ public class ServiciosAlquilerTest {
 
     @Inject
     private SqlSession sqlSession;
-
     ServiciosAlquiler serviciosAlquiler;
 
     public ServiciosAlquilerTest() {
@@ -32,11 +31,10 @@ public class ServiciosAlquilerTest {
 
     @Test
     public void emptyDB() {
-		System.out.println("lll");
         for(int i = 0; i < 100; i += 10) {
             boolean r = false;
             try {
-                Cliente cliente = serviciosAlquiler.consultarCliente(i);
+                Cliente cliente = serviciosAlquiler.consultarCliente(0);
             } catch(ExcepcionServiciosAlquiler e) {
                 r = true;
             } catch(IndexOutOfBoundsException e) {
@@ -47,8 +45,5 @@ public class ServiciosAlquilerTest {
         };
     }
 	
-	@Test 
-	public void agregarCliente(){
-		
-	}
+	
 }

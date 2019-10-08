@@ -24,7 +24,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
    private ItemDAO itemDAO;
    private ClienteDAO clienteDAO;
    private TipoItemDAO tipoItemDAO;
-   private ServiciosAlquilerItemsStub st;
+   private ServiciosAlquilerItemsStub st = new ServiciosAlquilerItemsStub();
    @Override
    public int valorMultaRetrasoxDia(int itemId){
 	   return st.valorMultaRetrasoxDia(itemId);

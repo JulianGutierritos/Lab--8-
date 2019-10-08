@@ -11,7 +11,7 @@ import edu.eci.cvds.samples.services.impl.ServiciosAlquilerImpl;
 import org.apache.ibatis.transaction.TransactionFactory;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
 import org.mybatis.guice.XMLMyBatisModule;
-
+import org.apache.ibatis.session.SqlSession;
 import java.util.Optional;
 
 import static com.google.inject.Guice.createInjector;
