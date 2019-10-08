@@ -1,6 +1,7 @@
 package edu.eci.cvds.sampleprj.dao;
 
 import edu.eci.cvds.samples.entities.Item;
+import java.util.List;
 
 public interface ItemDAO {
 
@@ -9,5 +10,7 @@ public interface ItemDAO {
    public Item load(int id) throws PersistenceException;
    
    public void actualizarTarifa(int id, long tarifa) throws PersistenceException ;
+   
+   public List<Item> loadLibres() throws PersistenceException;
 
 }

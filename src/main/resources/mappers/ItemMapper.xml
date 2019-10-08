@@ -50,6 +50,19 @@
 		i.id  = #{id_it}
 </select>   
 
+<select parameterType="map" id="consultarItemsLibres" resultMap="ItemsResult">
+select
+		i.id as ite_id,
+		i.nombre as ite_nombre,
+		i.descripcion ,
+		i.genero ,        
+		ti.id as ti_id ,
+		ti.descripcion ti_descripcion 
+		FROM 
+		VI_ITEMS as i left join VI_TIPOITEM as ti on i.TIPOITEM_id=ti.id 
+		WHERE  i.id NOT IN (SELECT ir.ITEMS_id FROM VI_ITEMRENTADO as ir WHERE ir.fechainiciorenta <= CURDATE() and ir.fechafinrenta >= CURDATE())		
+</select> 	
+
     <resultMap type='Item' id='ItemsResult'>
 		<id property='id' column='ite_id'/>
 		<result property='nombre' column='ite_nombre'/>

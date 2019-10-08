@@ -67,7 +67,18 @@
 		
 		WHERE 
 			c.documento = #{idcli}
+</select>      
+
+<select parameterType="map" id="consultarItemRentado" resultMap="ClienteResult">
+	select
+		ir.id as itemR_id,
+		ir.fechainiciorenta ,
+		ir.fechafinrenta ,
+		FROM VI_ITEMRENTADO 
+		WHERE 
+			c.id = #{idr}
 </select>       	
+ 	
 
 <insert parameterType="map" id="agregarItemRentadoACliente">
 	INSERT INTO VI_ITEMRENTADO (CLIENTES_documento, ITEMS_id, fechainiciorenta, fechafinrenta)

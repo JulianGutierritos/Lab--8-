@@ -8,6 +8,7 @@ import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ClienteMapper;
 import edu.eci.cvds.samples.entities.Item;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper;
 import edu.eci.cvds.samples.entities.Cliente;
+import edu.eci.cvds.samples.entities.ItemRentado;
 import java.sql.SQLException;
 import java.util.*;
 
@@ -28,7 +29,7 @@ public class MyBATISClienteDAO implements ClienteDAO{
   }
 
   @Override
-  public Cliente load(int id) throws PersistenceException {
+  public Cliente load(long id) throws PersistenceException {
   try{
       return clienteMapper.consultarCliente(id);
   }
@@ -37,7 +38,7 @@ public class MyBATISClienteDAO implements ClienteDAO{
   }
   }
 
-  public void rentarPelicula(int id, int idit, Date fechainicio, Date fechafin) throws PersistenceException{
+  public void rentarPelicula(long id, int idit, Date fechainicio, Date fechafin) throws PersistenceException{
   try{
       clienteMapper.agregarItemRentadoACliente(id, idit, fechainicio, fechafin);
   }
@@ -57,7 +58,7 @@ public class MyBATISClienteDAO implements ClienteDAO{
   
   }
 
-  public void cambiarVetado(int id, int val) throws PersistenceException{
+  public void cambiarVetado(long id, int val) throws PersistenceException{
   try{
       clienteMapper.setCliente(id, val);
   }
@@ -65,5 +66,14 @@ public class MyBATISClienteDAO implements ClienteDAO{
       throw new PersistenceException("Error al consultar el estado del cliente "+id,e);
   }
   
+  }
+  
+  public ItemRentado loadRentado(int id) throws PersistenceException{
+	try{
+      return clienteMapper.consultarItemRentado(id);
+	}
+	catch(org.apache.ibatis.exceptions.PersistenceException e){
+      throw new PersistenceException("Error al consultar elemento rentado "+id,e);
+  }
   }
 }

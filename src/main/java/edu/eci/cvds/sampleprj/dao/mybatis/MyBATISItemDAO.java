@@ -9,7 +9,7 @@ import edu.eci.cvds.samples.entities.Item;
 import edu.eci.cvds.sampleprj.dao.mybatis.mappers.ItemMapper;
 import edu.eci.cvds.samples.entities.TipoItem;
 import java.sql.SQLException;
-
+import java.util.List;
 public class MyBATISItemDAO implements ItemDAO{
 
   @Inject
@@ -46,4 +46,14 @@ public class MyBATISItemDAO implements ItemDAO{
   }
   }
 
+    @Override
+  public List<Item> loadLibres() throws PersistenceException {
+  try{
+      return itemMapper.consultarItemsLibres();
+  }
+  catch(org.apache.ibatis.exceptions.PersistenceException e){
+      throw new PersistenceException("Error al consultar los items libres ",e);
+  }
+  }
+	
   }
