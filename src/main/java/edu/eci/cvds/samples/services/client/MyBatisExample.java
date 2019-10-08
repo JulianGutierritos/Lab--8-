@@ -31,11 +31,17 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.text.ParseException;
 import edu.eci.cvds.samples.entities.*;
+import edu.eci.cvds.samples.services.ServiciosAlquiler;
+import edu.eci.cvds.samples.services.ExcepcionServiciosAlquiler;
+import edu.eci.cvds.sampleprj.dao.PersistenceException;
+import edu.eci.cvds.samples.services.impl.ServiciosAlquilerImpl;
 /**
  *
  * @author hcadavid
  */
 public class MyBatisExample {
+	
+	private static ServiciosAlquilerImpl serviciosAlquiler;
 
     /**
      * Método que construye una fábrica de sesiones de MyBatis a partir del
@@ -67,7 +73,7 @@ public class MyBatisExample {
 			SqlSessionFactory sessionfact = getSqlSessionFactory();
 			SqlSession sqlss = sessionfact.openSession();
 			
-			SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+			/*SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
 			Date d1 = formato.parse("2-10-2019");
 			Date d2 = formato.parse("20-10-2019");
 
@@ -82,11 +88,15 @@ public class MyBatisExample {
 			Item i = new Item(tipo, 14000, "Pulp Fiction", "Chimbita", d3, 10000, "VHS", "Clasico");
 			//im.insertarItem(i);
 			System.out.println(im.consultarItem(14000));
+			*/
+			System.out.println("lll");
+			System.out.println(serviciosAlquiler.valorMultaRetrasoxDia(2));
 			sqlss.commit();
 			sqlss.close();
-		} catch (ParseException e) {
+			
+		} catch (Exception e) {
             e.printStackTrace();
-        }        
+		}
         
     }
 

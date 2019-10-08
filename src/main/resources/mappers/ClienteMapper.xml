@@ -69,7 +69,7 @@
 			c.documento = #{idcli}
 </select>      
 
-<select parameterType="map" id="consultarItemRentado" resultMap="ClienteResult">
+<select parameterType="map" id="consultarItemRentado" resultMap="ItemRentadoResult">
 	select
 		ir.id as itemR_id,
 		ir.fechainiciorenta ,
