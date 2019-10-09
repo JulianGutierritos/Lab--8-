@@ -5,6 +5,11 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
 	<properties resource="config.properties">
     </properties>
+	
+	<!--<settings>
+        <setting name="logImpl" value="LOG4J"/>        
+    </settings>-->
+	
    <typeAliases>
        <typeAlias type='edu.eci.cvds.samples.entities.Cliente' alias='Cliente'/>
        <typeAlias type='edu.eci.cvds.samples.entities.Item' alias='Item'/>

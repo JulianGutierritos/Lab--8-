@@ -22,7 +22,9 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
 
    @Inject
    private ItemDAO itemDAO;
+   @Inject
    private ClienteDAO clienteDAO;
+   @Inject
    private TipoItemDAO tipoItemDAO;
    private ServiciosAlquilerItemsStub st = new ServiciosAlquilerItemsStub();
    @Override

@@ -19,7 +19,8 @@ public class ServiciosAlquilerTest {
 
     @Inject
     private SqlSession sqlSession;
-    ServiciosAlquiler serviciosAlquiler;
+	@Inject
+    private ServiciosAlquiler serviciosAlquiler;
 
     public ServiciosAlquilerTest() {
         serviciosAlquiler = ServiciosAlquilerFactory.getInstance().getServiciosAlquilerTesting();
@@ -34,7 +35,7 @@ public class ServiciosAlquilerTest {
         for(int i = 0; i < 100; i += 10) {
             boolean r = false;
             try {
-                Cliente cliente = serviciosAlquiler.consultarCliente(0);
+                Cliente cliente = serviciosAlquiler.consultarCliente(15422412);
             } catch(ExcepcionServiciosAlquiler e) {
                 r = true;
             } catch(IndexOutOfBoundsException e) {
