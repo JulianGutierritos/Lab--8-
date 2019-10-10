@@ -5,6 +5,7 @@ import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
 import javax.servlet.ServletContext;
 import com.google.inject.Injector;
+import edu.eci.cvds.samples.services.ServiciosAlquiler;
 
 public abstract class BasePageBean implements Serializable {
 
@@ -27,4 +28,8 @@ public abstract class BasePageBean implements Serializable {
     public void init() {
         getInjector().injectMembers(this);
     }
+	
+	public ServiciosAlquiler getServiciosAlquiler(){
+		return getInjector().getInstance(ServiciosAlquiler.class);
+	}
 }
