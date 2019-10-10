@@ -36,7 +36,7 @@ public interface ClienteMapper {
 	/**
 	* Agregar cliente
 	*/
-	public void agregarCliente(@Param("cli") Cliente cli);
+	public void agregarCliente(@Param("cl") Cliente cli);
 	
 	/**
 	* Cambia el estado de vetado de un cliente
