@@ -12,8 +12,10 @@
 	<h1>Clientes</h1>
 		
 		<p:dataTable id="clientes" var="cliente" value="#{clienteBean.data}" rows="15" paginator="true"
-			paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {NextPageLink}">
-			<p:column headerText="Nombre">
+			paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {NextPageLink}" selectionMode="single" 
+			rowKey="#{cliente.documento}" dblClickSelect="true">
+			<p:ajax event="rowSelect" listener="#{clienteBean.onRowSelect}"/>
+			<p:column headerText="Nombre" >
 				<h:outputText value="#{cliente.nombre}" />
 			</p:column>
 			<p:column headerText="Documento">
@@ -35,8 +37,7 @@
 		<p> <p:outputLabel value="Telefono: " style="font-weight:bold"/> <p:inputText readonly = "false" name = "telefono" value="#{clienteBean.telefono}"/> </p>
 		<p> <p:outputLabel value="Direccion: " style="font-weight:bold"/> <p:inputText readonly = "false" name = "direccion" value="#{clienteBean.direccion}"/> </p>
 		<p> <p:outputLabel value="Email: " style="font-weight:bold"/> <p:inputText readonly = "false" name = "email" value="#{clienteBean.email}"/> </p>
-		<p> <p:commandButton actionListener="#{clienteBean.insertarCliente}"  value="Ingresar"/></p>
-		
+		<p> <p:commandButton actionListener="#{clienteBean.insertarCliente}" update="clientes"  value="Ingresar"/></p>
 		</h:form>
 </h:body>
 </html>

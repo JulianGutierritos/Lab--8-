@@ -3,8 +3,11 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import org.primefaces.event.SelectEvent;
+import javax.faces.context.FacesContext; 
 import javax.inject.Inject;
 import edu.eci.cvds.samples.entities.Cliente;
+import edu.eci.cvds.samples.entities.ItemRentado;
 import edu.eci.cvds.samples.services.ServiciosAlquiler;
 import edu.eci.cvds.samples.services.ExcepcionServiciosAlquiler;
 
@@ -41,7 +44,7 @@ public class ClienteBean extends BasePageBean {
 					}
 				}
 			}
-			return serviciosAlquiler.consultarClientes();
+			return l;
 		} catch (ExcepcionServiciosAlquiler ex) {
 			throw ex;
 		}
@@ -49,9 +52,7 @@ public class ClienteBean extends BasePageBean {
 	
 	public void insertarCliente() throws ExcepcionServiciosAlquiler{
 		try{
-			System.out.println("llll");
 			Cliente c = new Cliente(this.nombre, this.documento, this.telefono, this.direccion, this.email, false, null);
-			System.out.println(c);
 			serviciosAlquiler.registrarCliente(c);
 		} catch (ExcepcionServiciosAlquiler ex) {
 			throw ex;
@@ -61,6 +62,14 @@ public class ClienteBean extends BasePageBean {
 	public Cliente getCliente() throws ExcepcionServiciosAlquiler{
 		try{
 			return serviciosAlquiler.consultarCliente(documento);
+		} catch (ExcepcionServiciosAlquiler ex) {
+			throw ex;
+		}
+	}
+	
+	public List<ItemRentado> getRentados() throws ExcepcionServiciosAlquiler{
+		try{
+			return serviciosAlquiler.consultarItemsCliente(documento);
 		} catch (ExcepcionServiciosAlquiler ex) {
 			throw ex;
 		}
@@ -107,4 +116,13 @@ public class ClienteBean extends BasePageBean {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public void onRowSelect(SelectEvent event) {
+		try{
+			documento = ((Cliente) event.getObject()).getDocumento();
+			FacesContext.getCurrentInstance().getExternalContext().redirect("registroalquiler.xhtml");
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+    }
 }
