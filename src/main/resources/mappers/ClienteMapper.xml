@@ -71,12 +71,20 @@
 
 <select parameterType="map" id="consultarItemRentado" resultMap="ItemRentadoResult">
 	select
-		ir.id as itemR_id,
-		ir.fechainiciorenta ,
-		ir.fechafinrenta ,
-		FROM VI_ITEMRENTADO 
+		ir.id,
+		ir.fechainiciorenta,
+		ir.fechafinrenta,
+		i.id as ite_id,
+		i.nombre as ite_nombre,
+		i.descripcion ,
+		i.fechalanzamiento ,
+		i.tarifaxdia ,
+		i.formatorenta ,
+		i.genero
+		FROM VI_ITEMRENTADO as ir
+		left join VI_ITEMS as i on ir.ITEMS_id=i.id 
 		WHERE 
-			c.id = #{idr}
+			ir.id = #{idr}
 </select>       	
  	
 

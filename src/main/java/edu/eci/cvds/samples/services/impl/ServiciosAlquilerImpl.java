@@ -80,7 +80,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
    @Override
    public long consultarMultaAlquiler(int iditem, Date fechaDevolucion) throws ExcepcionServiciosAlquiler {
 		try{
-			ItemRentado ir = clienteDAO.loadRentado(iditem);
+		   ItemRentado ir = clienteDAO.loadRentado(iditem);
 		   int valor = (int) ir.getItem().getTarifaxDia();
 		   Date fechaDev = fechaDevolucion;
 		   Date fechaFin = ir.getFechafinrenta();
@@ -88,6 +88,7 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
 		   if (res < 0){
 			   res = 0;
 		   }
+		   ir.setMulta(res);
 		   return res;
 		} catch (PersistenceException ex) {
            throw new ExcepcionServiciosAlquiler("Error al calcular multa"+ iditem,ex);
@@ -136,6 +137,8 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
    @Override
    public long consultarCostoAlquiler(int iditem, int numdias) throws ExcepcionServiciosAlquiler {
        try {
+		System.out.println("lllllllllllllll");
+		System.out.println(consultarItem(iditem));
 		int resultado = numdias * (int) consultarItem(iditem).getTarifaxDia();
 		return resultado;
 	   } catch (ExcepcionServiciosAlquiler ex) {

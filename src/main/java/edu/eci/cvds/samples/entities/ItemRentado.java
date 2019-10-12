@@ -20,6 +20,7 @@ public class ItemRentado implements Serializable {
     private Item item;
     private Date fechainiciorenta;
     private Date fechafinrenta;
+	private long multa;
 
     public ItemRentado(int id, Item item, Date fechainiciorenta, Date fechafinrenta) {
 		this.id = id;
@@ -62,6 +63,14 @@ public class ItemRentado implements Serializable {
     public void setFechafinrenta(Date fechafinrenta) {
         this.fechafinrenta = fechafinrenta;
     }
+	
+	public long getMulta(){
+		return this.multa;
+	}
+	
+	public void setMulta(long multa){
+		this.multa = multa;
+	}
 
     @Override
     public String toString() {

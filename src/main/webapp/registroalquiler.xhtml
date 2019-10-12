@@ -9,6 +9,31 @@
 	<title></title>
 </h:head>
 <h:body>
-	<h1>Alquiler</h1>
+	<h1>alquiler</h1>
+	<p:commandButton actionListener=="#{clienteBean.reiniciar}" value="Volver" />
+	<p:dataTable id="items" var="itemRentado" value="#{clienteBean.rentados}" rows="15" paginator="true"
+			paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {NextPageLink}">
+			<p:column headerText="Id" >
+				<h:outputText value="#{itemRentado.id}" />
+			</p:column>
+			<p:column headerText="Item" >
+				<h:outputText value="#{itemRentado.item.nombre}" />
+			</p:column>
+			<p:column headerText="Multa" >
+				<h:outputText value="#{itemRentado.multa}" />
+			</p:column>
+	</p:dataTable>
+	<h:form id="items_form">
+		<p> <p:outputLabel value="Codigo: " style="font-weight:bold"/> <p:inputText readonly = "false" name = "item" value="#{clienteBean.codigo}"/> </p>
+		<p> <p:outputLabel value="Numero de días: " style="font-weight:bold"/> <p:inputText readonly = "false" name = "dia" value="#{clienteBean.dias}"/> </p>
+		<p> <p:commandButton actionListener="#{clienteBean.rentar}" update="items"  value="Rentar">
+		 <p:confirm header="Confirmation" message="Are you sure?" icon="pi pi-exclamation-triangle" />
+		</p:commandButton> </p>
+		<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+			<p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="pi pi-check" />
+			<p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="pi pi-times" />
+		</p:confirmDialog>  
+		
+	</h:form>
 </h:body>
 </html>
