@@ -147,10 +147,8 @@ public class ServiciosAlquilerTest {
 		boolean r = true;
 		try{
 			List<TipoItem> tis = serviciosAlquiler.consultarTiposItem();
-			System.out.println(tis);
 			TipoItem ti;
 			for (int i = 0; i < tis.size(); i++){
-				System.out.println(tis.get(i).getID());
 				ti = serviciosAlquiler.consultarTipoItem(tis.get(i).getID());
 				System.out.println(ti);
 			}
