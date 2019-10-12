@@ -1,12 +1,11 @@
 package edu.eci.cvds;
 
-import java.util.ArrayList;
-import java.util.List;
-
+//import java.util.ArrayList;
+//import java.util.List;
 import com.google.inject.Inject;
-import edu.eci.cvds.sampleprj.dao.PersistenceException;
+//import edu.eci.cvds.sampleprj.dao.PersistenceException;
 import edu.eci.cvds.samples.entities.Cliente;
-import edu.eci.cvds.samples.entities.ItemRentado;
+//import edu.eci.cvds.samples.entities.ItemRentado;
 import edu.eci.cvds.samples.services.ExcepcionServiciosAlquiler;
 import edu.eci.cvds.samples.services.ServiciosAlquiler;
 import edu.eci.cvds.samples.services.ServiciosAlquilerFactory;

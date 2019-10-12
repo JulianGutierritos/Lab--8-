@@ -2,7 +2,6 @@ package edu.eci.cvds.view;
 import java.util.List;
 import java.util.ArrayList;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import org.primefaces.event.SelectEvent;
 import javax.faces.context.FacesContext; 

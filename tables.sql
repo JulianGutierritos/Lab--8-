@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `VI_CLIENTES` (
+CREATE TABLE IF NOT EXISTS VI_CLIENTES (
   `documento` BIGINT(20) NOT NULL,
   `nombre` VARCHAR(50)  NOT NULL,
   `telefono` VARCHAR(20)  NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS `VI_CLIENTES` (
 -- -----------------------------------------------------
 -- Table `VI_TIPOITEM`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `VI_TIPOITEM` (
+CREATE TABLE IF NOT EXISTS VI_TIPOITEM (
   `id` INT(11) NOT NULL,
   `descripcion` VARCHAR(50)  NOT NULL);
 
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `VI_TIPOITEM` (
 -- -----------------------------------------------------
 -- Table `VI_ITEMS`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `VI_ITEMS` (
+CREATE TABLE IF NOT EXISTS VI_ITEMS (
   `id` INT(11) NOT NULL,
   `nombre` VARCHAR(50)  NOT NULL,
   `descripcion` VARCHAR(500)  NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `VI_ITEMS` (
 -- -----------------------------------------------------
 -- Table `VI_ITEMRENTADO`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `VI_ITEMRENTADO` (
+CREATE TABLE IF NOT EXISTS VI_ITEMRENTADO (
   `id` INT NOT NULL AUTO_INCREMENT,
   `CLIENTES_documento` BIGINT(20) NOT NULL,
   `ITEMS_id` INT(11) NOT NULL,
