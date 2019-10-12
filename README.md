@@ -12,6 +12,8 @@ En este laboratorio se utilizará un 'framework' de persistencia. La base de dat
 
 ![](img/MODEL.png)
 
+
+
 ## Parte I (Para entregar en clase)
 
 1. Ubique los archivos de configuración para producción de MyBATIS (mybatis-config.xml). Éste está en la ruta donde normalmente se ubican los archivos de configuración de aplicaciones montadas en Maven (src/main/resources). Edítelos y agregue en éste, después de la sección &lt;settings&gt; los siguientes 'typeAliases':
@@ -176,3 +178,8 @@ En este laboratorio se utilizará un 'framework' de persistencia. La base de dat
 	```
 	
 	Verifique el funcionamiento haciendo una consulta a través del 'mapper' desde MyBatisExample.
+
+
+
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3aae06755a9f4ad39c8c38af00d2ccba)](https://www.codacy.com/manual/Ricar8o/Lab--8-?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JulianGutierritos/Lab--8-&amp;utm_campaign=Badge_Grade)
