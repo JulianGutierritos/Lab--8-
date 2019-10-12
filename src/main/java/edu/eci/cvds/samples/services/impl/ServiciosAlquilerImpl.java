@@ -137,8 +137,6 @@ public class ServiciosAlquilerImpl implements ServiciosAlquiler {
    @Override
    public long consultarCostoAlquiler(int iditem, int numdias) throws ExcepcionServiciosAlquiler {
        try {
-		System.out.println("lllllllllllllll");
-		System.out.println(consultarItem(iditem));
 		int resultado = numdias * (int) consultarItem(iditem).getTarifaxDia();
 		return resultado;
 	   } catch (ExcepcionServiciosAlquiler ex) {

@@ -9,18 +9,18 @@
 
 <select parameterType="map" id="getTiposItems" resultMap="TipoItemsResult">
 	select      
-		id,
-		descripcion 
+		id as ti_id,
+		descripcion as ti_descripcion
 	FROM 
 		VI_TIPOITEM  
 </select>  
 
-<select parameterType="map" id="getTipoItems" resultMap="TipoItemsResult">
+<select parameterType="map" id="getTipoItem" resultMap="TipoItemsResult">
 	select      
-		id,
-		descripcion 
+		ti.id as ti_id,
+		ti.descripcion as ti_descripcion
 	FROM 
-		VI_TIPOITEM  
+		VI_TIPOITEM as ti
 	WHERE 
 		id = #{id_ti}
 </select>  
