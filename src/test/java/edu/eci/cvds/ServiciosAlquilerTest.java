@@ -17,16 +17,11 @@ import org.junit.After;
 import org.junit.Test;
 import org.junit.Assert;
 import java.util.Date;
-import org.springframework.transaction.annotation.Transactional;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner; 
-import org.springframework.test.context.ContextConfiguration;
-
 public class ServiciosAlquilerTest {
 
     @Inject
     private SqlSession sqlSession;
-	@Inject
+    @Inject
     private ServiciosAlquiler serviciosAlquiler;
 
     public ServiciosAlquilerTest() {
@@ -48,7 +43,6 @@ public class ServiciosAlquilerTest {
             } catch(IndexOutOfBoundsException e) {
                 r = true;
             }
-            // Validate no Client was found;
             Assert.assertTrue(r);
         };
     }
