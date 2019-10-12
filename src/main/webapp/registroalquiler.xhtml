@@ -10,7 +10,7 @@
 </h:head>
 <h:body>
 	<h1>alquiler</h1>
-	<p:commandButton actionListener=="#{clienteBean.reiniciar}" value="Volver" />
+	<p:commandButton actionListener="#{clienteBean.reiniciar}" value="Volver" />
 	<p:dataTable id="items" var="itemRentado" value="#{clienteBean.rentados}" rows="15" paginator="true"
 			paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {NextPageLink}">
 			<p:column headerText="Id" >
