@@ -1,3 +1,13 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3aae06755a9f4ad39c8c38af00d2ccba)](https://www.codacy.com/manual/Ricar8o/Lab--8-?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JulianGutierritos/Lab--8-&amp;utm_campaign=Badge_Grade)
+
+[![CircleCI](https://circleci.com/gh/JulianGutierritos/Lab--8-.svg?style=svg)](https://circleci.com/gh/JulianGutierritos/Lab--8-)
+
+Heroku:
+https://dashboard.heroku.com/apps/lab-8ricardojulian
+https://lab-8ricardojulian.herokuapp.com/faces/registrocliente.xhtml
+
+
+
 ### Escuela Colombiana de Ingeniería
 ### Ciclos de Vida del desarrollo de Software – CVDS
 #### Tecnologías de persistencia - Frameworks de Persistencia - Introducción a MyBatis
@@ -178,8 +188,3 @@ En este laboratorio se utilizará un 'framework' de persistencia. La base de dat
 	```
 	
 	Verifique el funcionamiento haciendo una consulta a través del 'mapper' desde MyBatisExample.
-
-
-
-
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3aae06755a9f4ad39c8c38af00d2ccba)](https://www.codacy.com/manual/Ricar8o/Lab--8-?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JulianGutierritos/Lab--8-&amp;utm_campaign=Badge_Grade)
